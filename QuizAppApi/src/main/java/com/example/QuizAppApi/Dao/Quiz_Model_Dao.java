@@ -20,7 +20,12 @@ public class Quiz_Model_Dao {
     public Quiz_model save(Quiz_model model){
         Quiz_model model1= repo.save(model);
         Quiz_topic topic = dao.getById(model1.getTitleId());
-        ArrayList<Integer> arr =topic.getQuestionModelId();
+        ArrayList<Integer> arr;
+        if(topic.getQuestionModelId()==null){
+         arr =new ArrayList<>();
+        }else {
+            arr = topic.getQuestionModelId();
+        }
         arr.add(model1.getId());
         int nu =topic.getNumOfQues();
         nu++;

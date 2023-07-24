@@ -22,5 +22,6 @@ public class Quiz_topic {
     private int id;
     private String title;
     private int numOfQues;
-    private ArrayList<Integer> questionModelId;
+    private ArrayList<Integer> questionModelId = new ArrayList<>();
+
 }
